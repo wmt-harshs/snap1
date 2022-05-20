@@ -1,8 +1,8 @@
 pipeline{
     agent any
-    environment {
-        CI = 'true'
-    }
+    // environment {
+    //     CI = 'true'
+    // }
     tools {nodejs "node"}
     stages {
         stage('check') {
@@ -14,7 +14,7 @@ pipeline{
             steps {
                 sh 'npm ci'
                 sh 'npm run build'
-                archiveArtifacts artifacts: 'build/'
+                // archiveArtifacts artifacts: 'build/'
             }
         }
         
